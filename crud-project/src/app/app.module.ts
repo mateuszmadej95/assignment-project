@@ -12,7 +12,7 @@ import { CommonsModule } from './components/commons.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonsModule
+    CommonsModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
