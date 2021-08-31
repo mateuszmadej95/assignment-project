@@ -4,11 +4,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuModule } from 'primeng/menu';
 import { TabMenuModule } from 'primeng/tabmenu';
 
-import { TabMenuComponent } from '../tab-menu/tab-menu.component'
+import { TabMenuComponent } from './tab-menu/tab-menu.component';
+import { FormComponent } from './form/form.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
-    TabMenuComponent
+    TabMenuComponent,
+    FormComponent,
+    TableComponent
   ],
   imports: [
     MenuModule,
@@ -19,6 +23,8 @@ import { TabMenuComponent } from '../tab-menu/tab-menu.component'
   ],
   exports: [
     TabMenuComponent,
+    FormComponent,
+    TableComponent
   ]
 })
 

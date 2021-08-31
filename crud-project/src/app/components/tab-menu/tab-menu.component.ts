@@ -15,11 +15,9 @@ export class TabMenuComponent implements OnInit {
 
   public ngOnInit(): void {
     this.items = [
-      { label: 'Home', icon: 'pi pi-fw pi-home' },
-      { label: 'Calendar', icon: 'pi pi-fw pi-calendar' },
-      { label: 'Edit', icon: 'pi pi-fw pi-pencil' },
-      { label: 'Documentation', icon: 'pi pi-fw pi-file' },
-      { label: 'Settings', icon: 'pi pi-fw pi-cog' }
+      { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
+      { label: 'Table', icon: 'pi pi-fw pi-calendar', routerLink: ['/table'] },
+      { label: 'Form', icon: 'pi pi-fw pi-file', routerLink: ['/form'] }
     ];
 
     this.activeItem = this.items[0];
