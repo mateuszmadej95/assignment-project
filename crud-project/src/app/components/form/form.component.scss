@@ -1,0 +1,17 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 5px;
+
+  .form-modal {
+    padding: 2rem;
+    background-color: rgb(210, 221, 211);
+    border-radius: 5px;
+
+    .save-button {
+      margin-top: 3rem;
+    }
+  }
+}

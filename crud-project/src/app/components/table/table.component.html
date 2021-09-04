@@ -1,9 +1,10 @@
-<!-- <p-table [value]="tableItems" responsiveLayout="scroll">
+<p-table [value]="tableItems" responsiveLayout="scroll">
   <ng-template pTemplate="header">
       <tr>
           <th>Id</th>
           <th>Author</th>
           <th>Title</th>
+          <th>Actions</th>
       </tr>
   </ng-template>
   <ng-template pTemplate="body" let-item>
@@ -11,6 +12,7 @@
           <td>{{item.id}}</td>
           <td>{{item.author}}</td>
           <td>{{item.title}}</td>
+          <td><button pButton pRipple label="Delete" icon="pi pi-trash" (click)="removeTableItem(item)"></button></td>
       </tr>
   </ng-template>
-</p-table> -->table
+</p-table>

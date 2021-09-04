@@ -1,3 +1,23 @@
-<p>
-  form works!
-</p>
+<ng-container [formGroup]="formGroup">
+
+  <div class="form-container">
+    <div class="form-modal">
+      
+      <button type="button" (click)="navigateBack()" icon="pi pi-arrow-left" pButton pRipple label="Return to Homepage"></button>
+      <div>
+        <p class="form-label">Title</p>
+        <input type="text" pInputText formControlName="title"> 
+
+      </div>
+      <div>
+        <p class="form-label">Author</p>
+        <input type="text" pInputText formControlName="author"> 
+
+      </div>
+
+        <button type="button" class="save-button" (click)="saveItem()" icon="pi pi-info-circle" label="Save Item" pButton pRipple></button>
+
+    </div>
+  </div>
+  
+</ng-container>
