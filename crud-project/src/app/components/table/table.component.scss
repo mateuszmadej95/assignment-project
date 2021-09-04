@@ -1,8 +1,11 @@
 .item-link {
   cursor: pointer;
-  color: blue;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
-
+.item-link:hover {
+  background-color: #85b6db;
+}
 .details-button {
   margin-right: 1rem;
 }

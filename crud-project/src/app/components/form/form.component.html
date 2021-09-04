@@ -3,7 +3,7 @@
   <div class="form-container">
     <div class="form-modal">
       
-      <button type="button" (click)="navigateBack()" icon="pi pi-arrow-left" pButton pRipple label="Return to Homepage"></button>
+      <button type="button" (click)="navigateBack()" icon="pi pi-arrow-left" pButton pRipple label="Go to Homepage"></button>
       <div>
         <p class="form-label">Id</p>
         <input type="text" pInputText formControlName="id"> 
@@ -20,7 +20,7 @@
 
       </div>
 
-        <button type="button" [disabled]="saveDisabled" class="save-button" (click)="saveItem()" icon="pi pi-info-circle" label="Save Item" pButton pRipple></button>
+        <button type="button" [disabled]="formGroup.invalid || saveDisabled" class="save-button" (click)="saveItem()" icon="pi pi-info-circle" label="Save Item" pButton pRipple></button>
 
     </div>
   </div>

@@ -1,15 +1,9 @@
-<ng-container *ngIf="item$ | async"></ng-container>
+<ng-container *ngIf="item">
 <h3>Item Details: </h3>
 
-<div>
-  <p>Id</p>
+  <p>Id: {{item.id}}</p>
+  <p>Title: {{item.title}}</p>
+  <p>Author: {{item.author}}</p>
 
-</div>
-<div>
-  <p>Title</p>
-
-</div>
-<div>
-  <p>Author</p>
-
-</div>
+  <button type="button" (click)="navigateBack()" icon="pi pi-arrow-left" pButton pRipple label="Go to Table"></button>
+</ng-container>

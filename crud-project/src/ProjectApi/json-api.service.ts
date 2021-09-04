@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TableItem } from 'src/app/interfaces/table-item';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { TableItem } from 'src/app/interfaces/table-item';
 })
 export class JsonApiService {
 
-  private BASE_API_URL = 'http://localhost:3000';
+  private BASE_API_URL = environment.baseApiUrl;
 
   constructor(private readonly http: HttpClient) { }
 
