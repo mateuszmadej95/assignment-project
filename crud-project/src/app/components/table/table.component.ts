@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
+import { JsonApiService } from 'src/ProjectApi/json-api.service';
 import { TableItem } from '../../interfaces/table-item';
 
 @Component({
@@ -6,23 +9,32 @@ import { TableItem } from '../../interfaces/table-item';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements OnInit, OnDestroy {
 
-  public tableItems: TableItem[] = [
-    { id: '1', author: 'Jon Doe', title: 'First one' },
-    { id: '2', author: 'Jane Doe', title: 'Sec one' },
-    { id: '3', author: 'Jane Doe', title: 'Third one' },
-    { id: '4', author: 'Jon Doe', title: '4th one' },
-    { id: '5', author: 'Jon Doe', title: '5th one' },
-  ]
+  public tableItems$: Observable<TableItem[]>;
   public columns = [{ prop: 'id' }, { name: 'author' }, { name: 'title' }];
 
-  constructor() { }
+  private subscriptionSink: Subscription[] = [];
 
-  ngOnInit() {
+  constructor(
+    private readonly jsonApiService: JsonApiService,
+    private readonly router: Router,
+    private readonly route: ActivatedRoute
+    ) { }
+
+  public ngOnInit(): void {
+    this.tableItems$ = this.jsonApiService.getAllTableItems();
   }
 
-  public removeTableItem(item: TableItem): void {
-    console.log('removing item: ', item)
+  public ngOnDestroy(): void {
+    this.subscriptionSink.forEach(sub => sub.unsubscribe());
+  }
+
+  public onRemoveTableItem(item: TableItem): void {
+    this.subscriptionSink.push(this.jsonApiService.removeTableItem(item).subscribe());
+  }
+
+  public navigateToItem(id: string): void {
+    this.router.navigate([id], { relativeTo: this.route });
   }
 }

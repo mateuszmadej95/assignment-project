@@ -1,4 +1,4 @@
-<p-table [value]="tableItems" responsiveLayout="scroll">
+<p-table [value]="tableItems$ | async" responsiveLayout="scroll">
   <ng-template pTemplate="header">
       <tr>
           <th>Id</th>
@@ -9,10 +9,15 @@
   </ng-template>
   <ng-template pTemplate="body" let-item>
       <tr>
-          <td>{{item.id}}</td>
+          <td> 
+            <a class="item-link" (click)="navigateToItem(item.id)">{{item.id}}</a>
+          </td>
           <td>{{item.author}}</td>
           <td>{{item.title}}</td>
-          <td><button pButton pRipple label="Delete" icon="pi pi-trash" (click)="removeTableItem(item)"></button></td>
+          <td>
+            <button class="details-button" pButton pRipple label="View Details" icon="pi pi-eye" (click)="navigateToItem(item.id)"></button>
+            <button class="p-button-danger" pButton pRipple label="Delete" icon="pi pi-trash" (click)="onRemoveTableItem(item)"></button>
+          </td>
       </tr>
   </ng-template>
 </p-table>

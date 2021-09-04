@@ -10,6 +10,7 @@ export class FormService {
 
   public initFormGroup(): FormGroup {
     const formGroup = this.formBuilder.group({
+      id: this.formBuilder.control('', [Validators.required]),
       title: this.formBuilder.control('', [Validators.required, Validators.minLength(7)]),
       author: this.formBuilder.control('', [Validators.required]),
     });

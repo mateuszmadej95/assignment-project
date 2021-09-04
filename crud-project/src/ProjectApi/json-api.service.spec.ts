@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { FirebaseApiService } from './firebase-api.service';
+import { JsonApiService } from './json-api.service';
 
-describe('Service: FirebaseApi', () => {
+describe('Service: JsonApi', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FirebaseApiService]
+      providers: [JsonApiService]
     });
   });
 
-  it('should ...', inject([FirebaseApiService], (service: FirebaseApiService) => {
+  it('should ...', inject([JsonApiService], (service: JsonApiService) => {
     expect(service).toBeTruthy();
   }));
 });

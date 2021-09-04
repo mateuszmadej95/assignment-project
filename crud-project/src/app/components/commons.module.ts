@@ -10,13 +10,15 @@ import { InputTextModule } from 'primeng/inputtext';
 import { TabMenuComponent } from './tab-menu/tab-menu.component';
 import { FormComponent } from './form/form.component';
 import { TableComponent } from './table/table.component';
-import { FirebaseApiService } from '../api/firebase-api.service';
+import { JsonApiService } from 'src/ProjectApi/json-api.service';
+import { ItemDetailsComponent } from './item-details/item-details.component';
 
 @NgModule({
   declarations: [
     TabMenuComponent,
     FormComponent,
-    TableComponent
+    TableComponent,
+    ItemDetailsComponent
   ],
   imports: [
     MenuModule,
@@ -34,7 +36,7 @@ import { FirebaseApiService } from '../api/firebase-api.service';
     TableComponent
   ],
   providers: [
-    FirebaseApiService
+    JsonApiService
   ]
 })
 

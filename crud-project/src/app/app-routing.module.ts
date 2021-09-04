@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
+import { ItemDetailsComponent } from './components/item-details/item-details.component';
 import { TableComponent } from './components/table/table.component';
 
 const routes: Routes = [
-  // { path: '', component: AppComponent, pathMatch: 'full' },
+  { path: 'table/:itemId', component: ItemDetailsComponent, pathMatch: 'full' }, 
   { path: 'form', component: FormComponent, pathMatch: 'full' },
   { path: 'table', component: TableComponent, pathMatch: 'full' },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
