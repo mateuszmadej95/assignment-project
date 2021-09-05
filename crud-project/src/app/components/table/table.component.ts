@@ -11,7 +11,7 @@ import { TableItem } from '../../interfaces/table-item';
 })
 export class TableComponent implements OnInit, OnDestroy {
 
-  public tableItems$: Observable<TableItem[]>;
+  public tableItems: TableItem[];
 
   private subscriptionSink: Subscription[] = [];
 
@@ -22,7 +22,9 @@ export class TableComponent implements OnInit, OnDestroy {
     ) { }
 
   public ngOnInit(): void {
-    this.tableItems$ = this.jsonApiService.getAllTableItems();
+    this.subscriptionSink.push(this.jsonApiService.getAllTableItems().subscribe(items => {
+      this.tableItems = items;
+    }));
   }
 
   public ngOnDestroy(): void {
