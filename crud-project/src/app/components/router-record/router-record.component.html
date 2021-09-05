@@ -1,0 +1,7 @@
+<p-button (click)="showBasicDialog()" icon="pi pi-external-link" label="Show Router Record" class="show-dialog-button"></p-button>
+<p-dialog header="Router Record:" [(visible)]="displayBasic" [style]="{width: '50vw'}" [baseZIndex]="10000">
+    
+  <div *ngFor="let routerRecord of routerRecords">
+    <a [routerLink]="routerRecord">{{convertToRouterName(routerRecord)}}</a>
+  </div>
+</p-dialog>

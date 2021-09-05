@@ -31,4 +31,8 @@ export class JsonApiService {
     return this.http.post<TableItem[]>(`${this.BASE_API_URL}/posts`, item);
   }
 
+  public getAuthorItems(authorName: string): Observable<TableItem[]> {
+    return this.http.get<TableItem[]>(`${this.BASE_API_URL}/posts?&author=${authorName}`);
+  }
+
 }

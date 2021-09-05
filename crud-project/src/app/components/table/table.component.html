@@ -12,7 +12,9 @@
           <td> 
             <a class="item-link" (click)="navigateToItem(item.id)">{{item.id}}</a>
           </td>
-          <td>{{item.author}}</td>
+          <td> 
+            <a class="item-link" (click)="navigateToAuthor(item.author)">{{item.author}}</a>
+          </td>
           <td>{{item.title}}</td>
           <td>
             <button class="details-button" pButton pRipple label="View Details" icon="pi pi-eye" (click)="navigateToItem(item.id)"></button>

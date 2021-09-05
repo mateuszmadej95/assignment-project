@@ -12,7 +12,6 @@ import { TableItem } from '../../interfaces/table-item';
 export class TableComponent implements OnInit, OnDestroy {
 
   public tableItems$: Observable<TableItem[]>;
-  public columns = [{ prop: 'id' }, { name: 'author' }, { name: 'title' }];
 
   private subscriptionSink: Subscription[] = [];
 
@@ -36,5 +35,9 @@ export class TableComponent implements OnInit, OnDestroy {
 
   public navigateToItem(id: string): void {
     this.router.navigate([id], { relativeTo: this.route });
+  }
+
+  public navigateToAuthor(authorName: string): void {
+    this.router.navigate(['authors', authorName], { relativeTo: this.route });
   }
 }
