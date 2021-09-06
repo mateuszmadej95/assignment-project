@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MenuModule } from 'primeng/menu';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
@@ -17,6 +16,14 @@ import { RouterRecordComponent } from './router-record/router-record.component';
 import { RouterRecordService } from './router-record/router-record.service';
 import { AuthorComponent } from './author/author.component';
 
+const primeNgModules = [
+  TabMenuModule,
+  TableModule,
+  ButtonModule,
+  InputTextModule,
+  DialogModule
+];
+
 @NgModule({
   declarations: [
     TabMenuComponent,
@@ -27,15 +34,9 @@ import { AuthorComponent } from './author/author.component';
     AuthorComponent
   ],
   imports: [
-    MenuModule,
-    TabMenuModule,
     CommonModule,
-    FormsModule,
     ReactiveFormsModule,
-    TableModule,
-    ButtonModule,
-    InputTextModule,
-    DialogModule
+    ...primeNgModules
   ],
   exports: [
     TabMenuComponent,

@@ -1,4 +1,4 @@
-<ng-container *ngIf="!tableItems.length; else tableTpl">
+<ng-container *ngIf="!tableItems?.length; else tableTpl">
   <p>No items to display.</p>
 </ng-container>
 <ng-template #tableTpl>

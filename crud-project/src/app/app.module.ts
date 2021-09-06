@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CommonsModule } from './components/commons.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

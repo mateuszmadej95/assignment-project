@@ -33,6 +33,9 @@ export class TableComponent implements OnInit, OnDestroy {
 
   public onRemoveTableItem(item: TableItem): void {
     this.subscriptionSink.push(this.jsonApiService.removeTableItem(item).subscribe());
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
   }
 
   public navigateToItem(id: string): void {

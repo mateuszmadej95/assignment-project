@@ -12,6 +12,7 @@
       <div>
         <p class="form-label">Title</p>
         <input type="text" pInputText formControlName="title"> 
+        <p *ngIf="formGroup.get('title').errors?.minlength" class="error-msg">Required length is 7.</p>
 
       </div>
       <div>

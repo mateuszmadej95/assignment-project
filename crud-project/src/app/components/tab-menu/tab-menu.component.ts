@@ -6,8 +6,7 @@ import { filter, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tab-menu',
-  templateUrl: './tab-menu.component.html',
-  styleUrls: ['./tab-menu.component.scss']
+  templateUrl: './tab-menu.component.html'
 })
 export class TabMenuComponent implements OnInit, OnDestroy {
 

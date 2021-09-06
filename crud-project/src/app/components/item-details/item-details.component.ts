@@ -7,8 +7,7 @@ import { JsonApiService } from 'src/ProjectApi/json-api.service';
 
 @Component({
   selector: 'app-item-details',
-  templateUrl: './item-details.component.html',
-  styleUrls: ['./item-details.component.scss']
+  templateUrl: './item-details.component.html'
 })
 export class ItemDetailsComponent implements OnInit, OnDestroy {
 
